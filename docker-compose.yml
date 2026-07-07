@@ -1,0 +1,9 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    environment:
+      DB_PATH: /app/data/censor_history.db
